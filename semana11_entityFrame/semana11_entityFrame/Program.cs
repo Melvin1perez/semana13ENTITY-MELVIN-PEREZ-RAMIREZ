@@ -78,18 +78,50 @@
 //    }
 //}
 //---------2--------------
+
 //using (var DB = new ContextoDB())
 //{
-//    Console.WriteLine("Ingrese el Id del registro que desea modificar");
+//    Console.WriteLine("Ingrese el ID del registro que desea modificar:");
 //    var id = Console.ReadLine();
 //    var persona = DB.Estudiante.FirstOrDefault(p => p.Id == Int32.Parse(id));
 
 //    if (persona != null)
 //    {
-//        persona.Apellidos = "ATRIBUTO MODIFICADO";
+//        Console.WriteLine("¿Qué atributo desea modificar (NOMBRE, APELLIDO, SEXO o EDAD)?");
+//        var atributoAModificar = Console.ReadLine();
+
+//        switch (atributoAModificar.ToUpper())
+//        {
+//            case "NOMBRE":
+//                Console.WriteLine("Ingrese el nuevo nombre:");
+//                persona.Nombres = Console.ReadLine();
+//                break;
+//            case "APELLIDO":
+//                Console.WriteLine("Ingrese el nuevo apellido:");
+//                persona.Apellidos = Console.ReadLine();
+//                break;
+//            case "SEXO":
+//                Console.WriteLine("Ingrese el nuevo sexo:");
+//                persona.Sexo = Console.ReadLine();
+//                break;
+//            case "EDAD":
+//                Console.WriteLine("Ingrese la nueva edad:");
+//                persona.Edad = Convert.ToInt32(Console.ReadLine());
+//                break;
+//            default:
+//                Console.WriteLine("Atributo no válido.");
+//                break;
+//        }
+
 //        DB.SaveChanges();
+//        Console.WriteLine("Registro modificado correctamente.");
+//    }
+//    else
+//    {
+//        Console.WriteLine("ID no encontrado. No se pudo realizar la modificación.");
 //    }
 //}
+    
 //---------3--------------
 using (var DB = new ContextoDB())
 {
